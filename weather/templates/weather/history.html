@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Weather History
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Weather History</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Temperature (°C)</th>
+                <th>Description</th>
+                <th>Humidity (%)</th>
+                <th>Wind Speed (km/h)</th>
+                <th>Time of Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for weather in weather_history %}
+                <tr>
+                    <td>{{ weather.city_name }}</td>
+                    <td>{{ weather.temperature }}</td>
+                    <td>{{ weather.description }}</td>
+                    <td>{{ weather.humidity }}</td>
+                    <td>{{ weather.wind_speed }}</td>
+                    <td>{{ weather.time_of_query }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
