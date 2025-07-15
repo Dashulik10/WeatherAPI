@@ -25,9 +25,3 @@ cd WeatherAPI
    ```
 Приложение будет доступно по адресу: [http://localhost:8000](http://localhost:8000)
 
-
-Если вы развернули проект без Docker:
-- Выполните команду `python manage.py collectstatic`, чтобы собрать статические файлы:
-  ```bash
-  python manage.py collectstatic
-  ```
