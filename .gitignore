@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual Environment
+venv/
+env/
+
+# Django
+*.log
+staticfiles/
+
+# Docker
+*.out
+*.pid
+*.log
+
+# Environment Variables
+.env
+
+# PostgreSQL Data
+*.pgsql
+*.data
+postgres_data/

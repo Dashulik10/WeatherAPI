@@ -1,11 +1,14 @@
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-yyfm6@)xsjnxgdowyb(a#@%)--8t3u9+(avn=+)2p23k88lahp'
 
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = []
 
@@ -52,7 +55,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'WeatherAPI.wsgi.application'
 
-OPENWEATHER_API_KEY = '99c9ead7071458b8c7da87724c7388b6'
+OPENWEATHER_API_KEY = os.getenv(
+    'OPENWEATHER_API_KEY',
+    'default_openweather_key')
 
 DATABASES = {
     'default': {
